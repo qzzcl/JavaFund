@@ -6,21 +6,75 @@ public class Addtional2 {
         Scanner scanner = new Scanner(System.in);
         String userInp = scanner.nextLine();
 
-        //digitToText(userInp);
+        System.out.println(digitToText(userInp));
 
     }
-/*
+    /* new swtich statement
     public static String digitToText(String number){
-        String lastSymbol = number.charAt(number.length()-1);
-        String    text="";
-
-        switch (lastSymbol){
+        char lastSymbol = number.charAt(number.length()-1);
+        String lastSymbolStr = Character.toString(lastSymbol);
+        String text=switch (lastSymbolStr){
             case "1" -> text = "one";
+            case "2" -> text = "two";
+            case "3" -> text = "three";
+            case "4" -> text = "four";
+            case "5" -> text = "five";
+            case "6" -> text = "six";
+            case "7" -> text = "seven";
+            case "8" -> text = "eight";
+            case "9" -> text = "nine";
+            case "0" -> text = "zero";
+
             default -> text = "Wrong";
-        }
+        };
+
         return text;
     }
 */
+    //old switch - FOR JUDGE
+    public static String digitToText(String number){
+        char lastSymbol = number.charAt(number.length()-1);
+        String lastSymbolStr = Character.toString(lastSymbol);
+        String text="";
+        switch (lastSymbolStr){
+            case "1" :
+                text = "one";
+                break;
+            case "2" :
+                text = "two";
+                break;
+            case "3" :
+                text = "three";
+                break;
+            case "4" :
+                text = "four";
+                break;
+            case "5" :
+                text = "five";
+                break;
+            case "6" :
+                text = "six";
+                break;
+            case "7" :
+                text = "seven";
+                break;
+            case "8" :
+                text = "eight";
+                break;
+            case "9" :
+                text = "nine";
+                break;
+            case "0" :
+                text = "zero";
+                break;
+
+            default :
+                text = "Wrong";
+                break;
+        };
+
+        return text;
+    }
 }
 
 
