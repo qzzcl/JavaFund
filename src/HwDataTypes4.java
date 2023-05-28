@@ -4,10 +4,24 @@ public class HwDataTypes4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int entries = Integer.parseInt(scanner.nextLine());
-        if (entries < 1 || entries > 20){
-            return;
+        boolean isValidInput = false;
+        int entries = 0;
+
+        while (!isValidInput) {
+            try {
+                entries = Integer.parseInt(scanner.nextLine());
+                if (entries < 1 || entries > 20) {
+                    //System.out.println("Invalid input. Please enter a value between 1 and 20.");
+                    entries = Integer.parseInt(scanner.nextLine());
+                } else {
+                    isValidInput = true;
+                }
+            } catch (NumberFormatException e) {
+                //System.out.println("Invalid input. Please enter an integer value.");
+            }
         }
+
+
         int sumCharValues = 0;
         for (int i = 0 ; i < entries ; i ++){
             String letter = scanner.nextLine();
