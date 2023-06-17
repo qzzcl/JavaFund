@@ -1,0 +1,43 @@
+package Lists.LIstsExtraExercise;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class Messaging_01 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
+        String inputS = scanner.nextLine();
+        List<Integer> listInts = Arrays
+                .stream(inputS.split(" "))
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
+
+        String inputString = scanner.nextLine();
+
+        String message ="";
+        for (int i = 0 ; i < listInts.size(); i++){
+            int sumDigitsElement=0;
+            int element = listInts.get(i);
+            //loop thru the element to get the sum
+            while(element > 0){
+                int lastDigit = element % 10;
+                sumDigitsElement += lastDigit;
+                element /= 10;
+            }
+
+            int y = 0;
+            char symbol = 0;
+            while (y <= sumDigitsElement){
+                int size = sumDigitsElement / inputString.length();
+                String tempLarger = inputString.repeat(size+1);
+                symbol = tempLarger.charAt(y);
+                y++;
+            }
+            message += symbol;
+        }
+        System.out.println(message);
+    }
+
+}

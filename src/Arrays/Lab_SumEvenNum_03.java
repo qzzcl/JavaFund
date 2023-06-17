@@ -48,7 +48,6 @@ public class Lab_SumEvenNum_03 {
          */
 
         //solution 4 - using stream and mapping to convert the string array to int array
-
         //4.1 - using lambda
         int[] numArFromInput = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(e -> Integer.parseInt(e)).toArray();
         //4.2 - method reference
