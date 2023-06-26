@@ -27,17 +27,31 @@ public class Messaging_01 {
                 element /= 10;
             }
 
-            int y = 0;
+            int counterSum = 0;
+            int symbolIdx=0;
             char symbol = 0;
-            while (y <= sumDigitsElement){
-                int size = sumDigitsElement / inputString.length();
-                String tempLarger = inputString.repeat(size+1);
-                symbol = tempLarger.charAt(y);
-                y++;
+            int stringListSize = inputString.length();
+
+            while (counterSum <= sumDigitsElement){
+
+                if (counterSum == sumDigitsElement){
+                    symbol = inputString.charAt(symbolIdx);
+
+                    //now remove the char from the list
+                    StringBuilder sb = new StringBuilder(inputString);
+                    sb.deleteCharAt(symbolIdx);
+                    inputString = sb.toString();
+                }
+
+                counterSum++;
+                symbolIdx++;
+                //if it reaches the end of the list, reset
+                if (symbolIdx > stringListSize-1){
+                    symbolIdx = 0;
+                }
             }
             message += symbol;
         }
         System.out.println(message);
     }
-
 }
