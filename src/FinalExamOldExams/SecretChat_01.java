@@ -31,10 +31,10 @@ public class SecretChat_01 {
                     hiddenMessage = hiddenMessage.delete(startIndexCut,endIndexCut);
                     StringBuilder reversed = new StringBuilder(substring).reverse();
                     hiddenMessage.append(reversed);
+                    System.out.println(hiddenMessage);
                 }else{
                     System.out.println("error");
                 }
-                System.out.println(hiddenMessage);
             } else if (command.contains("ChangeAll")) {
                 String substring = command.split(":\\|:")[1];
                 String replacementString = command.split(":\\|:")[2];
